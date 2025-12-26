@@ -46,7 +46,7 @@ solar:
 
 # CORS Settings
 cors:
-  allowed-origins: http://localhost:3000,https://your-vercel-app.vercel.app
+  allowed-origins: http://localhost:3000,http://43.201.18.138:8080,https://your-vercel-app.vercel.app
 
 # Logging
 logging:
