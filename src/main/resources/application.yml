@@ -38,11 +38,6 @@ jwt:
   secret: ${JWT_SECRET:mosh-jwt-secret-key-for-hackathon-2025-profitlab-earth-team-4-please-change-in-production}
   expiration: 3600000 # 1 hour in milliseconds
 
-# Solar LLM API Settings
-solar:
-  api:
-    url: https://api.upstage.ai/v1/solar
-    key: up_ws0Qe4bMoq0GEC8etzVzZcJEXs0ND
 
 # CORS Settings
 cors:
@@ -56,6 +51,7 @@ logging:
     org.hibernate.SQL: DEBUG
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
 
+# Solar LLM API Settings
 external:
   upstage:
     api-key: ${UPSTAGE_API_KEY}
