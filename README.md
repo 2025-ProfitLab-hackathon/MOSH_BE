@@ -125,7 +125,6 @@ DB_USERNAME: MySQL 사용자명
 DB_PASSWORD: MySQL 비밀번호
 REDIS_HOST: Redis 호스트 (기본: 43.201.18.138)
 REDIS_PORT: Redis 포트 (기본: 6379)
-REDIS_PASSWORD: Redis 비밀번호
 JWT_SECRET: JWT 시크릿 키
 SOLAR_API_URL: Solar LLM API URL
 SOLAR_API_KEY: Solar API 키
@@ -153,14 +152,3 @@ docker-compose up -d
 
 - **ci.yml**: dev/feature 브랜치 PR 시 테스트 실행
 - **deploy.yml**: main 브랜치 push 시 EC2 배포
-
-## 팀 구성
-
-- **PO**: 1명
-- **Designer**: 1명
-- **Backend**: 1명 (AI 개발 겸임)
-- **Frontend**: 2명
-
-## License
-
-Copyright 2025 Earth Team #4
