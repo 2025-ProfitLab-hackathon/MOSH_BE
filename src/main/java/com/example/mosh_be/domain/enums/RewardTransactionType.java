@@ -1,0 +1,7 @@
+package com.example.mosh_be.domain.enums;
+
+public enum RewardTransactionType {
+    TICKET,
+    REVIEW,
+    USE
+}
