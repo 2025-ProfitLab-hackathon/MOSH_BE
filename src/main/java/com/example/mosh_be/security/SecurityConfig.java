@@ -37,6 +37,7 @@ public class SecurityConfig {
                 .requestMatchers("/api/v1/festivals/**").permitAll()
                 .requestMatchers("/api/v1/booths/**").permitAll()
                 .requestMatchers("/api/v1/menus/**").permitAll()
+                .requestMatchers("/api/v1/chatbot/**").permitAll()
                 .requestMatchers("/swagger-ui/**", "/v3/api-docs/**", "/swagger-ui.html").permitAll()
                 .anyRequest().authenticated()
             )
