@@ -141,3 +141,10 @@ $RECYCLE.BIN/
 
 # Shortcuts
 *.lnk
+
+############################
+# Environment Variables
+############################
+.env
+.env.local
+.env.*.local
