@@ -8,20 +8,27 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Validate secrets (no leak)
+        run: |
+          test -n "${{ secrets.EC2_HOST }}" || (echo "EC2_HOST is empty/missing" && exit 1)
+          test -n "${{ secrets.EC2_USER }}" || (echo "EC2_USER is empty/missing" && exit 1)
+          test -n "${{ secrets.EC2_SSH_KEY }}" || (echo "EC2_SSH_KEY is empty/missing" && exit 1)
+          test -n "${{ secrets.EC2_APP_DIR }}" || (echo "EC2_APP_DIR is empty/missing" && exit 1)
+
       - name: Deploy to EC2 (docker compose)
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
+          port: 22
           script: |
             set -e
-            cd ${{ secrets.EC2_APP_DIR }}
+            cd "${{ secrets.EC2_APP_DIR }}"
 
             git fetch --all
             git reset --hard origin/main
 
             docker compose down
             docker compose up -d --build
-
             docker compose ps
