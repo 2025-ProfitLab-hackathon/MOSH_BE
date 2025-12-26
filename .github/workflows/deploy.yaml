@@ -16,7 +16,7 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             set -e
-            cd ${{ secrets.APP_DIR }}
+            cd ${{ secrets.EC2_APP_DIR }}
 
             git fetch --all
             git reset --hard origin/main
