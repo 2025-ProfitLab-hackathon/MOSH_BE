@@ -15,7 +15,7 @@ public class UpstageChatController {
 
     private final UpstageChatService upstageChatService;
 
-    @PostMapping("/chatbot/conversations/response")
+    @PostMapping("/chatbot/messages")
     public ResponseEntity<ChatMessageResponse> getUpstageChatResponse(
             @RequestBody UpstageChatRequest request,
             @AuthenticationPrincipal Long userId
